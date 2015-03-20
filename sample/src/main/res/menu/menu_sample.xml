@@ -1,0 +1,12 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:id="@+id/expandAll"
+          android:title="@string/expand_all_menu_text"
+          android:orderInCategory="100"
+          android:showAsAction="ifRoom"/>
+
+    <item android:id="@+id/collapseAll"
+          android:title="@string/collapse_all_menu_text"
+          android:orderInCategory="100"
+          android:showAsAction="ifRoom"/>
+</menu>
