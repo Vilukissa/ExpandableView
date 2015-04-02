@@ -1,4 +1,4 @@
-package com.calicode.expendableview;
+package com.calicode.expandableview;
 
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
@@ -23,7 +23,6 @@ public class ExpandableView extends LinearLayout implements OnClickListener {
 
     private View mHeaderLayout;
     private View mExpandLayout;
-    private View mViewRoot;
 
     private int mHeaderHeight;
     private int mExpandHeight;
@@ -43,6 +42,9 @@ public class ExpandableView extends LinearLayout implements OnClickListener {
 
     private void init(Context context) {
         if (!isInEditMode()) {
+            setOrientation(VERTICAL);
+            setLayoutParams(new LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.WRAP_CONTENT));
+
             inflate(context, R.layout.expand_view, this);
 
             mHeaderStub = (ViewStub) findViewById(R.id.headerStub);
@@ -67,7 +69,6 @@ public class ExpandableView extends LinearLayout implements OnClickListener {
                 }
             });
 
-            mViewRoot = findViewById(R.id.viewRoot); // TODO: try to use merge in xml
             setOnClickListener(this);
         }
     }
@@ -78,8 +79,8 @@ public class ExpandableView extends LinearLayout implements OnClickListener {
 
         if (mHeaderLayout != null && mExpandLayout != null && (mHeaderHeight == 0 || mExpandHeight == 0)) {
             // Root view's calculations
-            int viewTopPadding = mViewRoot.getPaddingTop();
-            int viewBottomPadding = mViewRoot.getPaddingBottom();
+            int viewTopPadding = getPaddingTop();
+            int viewBottomPadding = getPaddingBottom();
 
             // Header view's calculations
             int headerTopMargin = ((LayoutParams) mHeaderLayout.getLayoutParams()).topMargin;

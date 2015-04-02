@@ -8,8 +8,8 @@ import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-import com.calicode.expendableview.ExpandableView;
-import com.calicode.expendableview.ExpandableView.OnExpandableViewInflatedListener;
+import com.calicode.expandableview.ExpandableView;
+import com.calicode.expandableview.ExpandableView.OnExpandableViewInflatedListener;
 
 
 public class SampleActivity extends Activity {
